@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <header class="admin-top">
+    <h1>Admin page</h1>
+    <div>
+      <a href="portfolio.html">View portfolio</a>
+      <button class="small-btn" id="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <p class="admin-note">Add, edit or delete projects. The changes will show on the portfolio page.</p>
+
+    <div class="projects-grid" id="project-list"></div>
+
+    <form class="crud-form" id="project-form">
+      <h3 id="project-form-title">Add a project</h3>
+      <input type="hidden" id="project-id">
+      <input type="text" id="project-title" maxlength="100" placeholder="Project title">
+      <textarea id="project-description" placeholder="Short description"></textarea>
+      <input type="text" id="project-tags" maxlength="255" placeholder="Tags separated by commas (React, Node.js)">
+      <label class="check-label">
+        <input type="checkbox" id="project-featured"> Wide card (featured)
+      </label>
+      <button class="button" type="submit" id="project-save">Add project</button>
+      <button class="button button-outline" type="button" id="project-clear">Clear</button>
+    </form>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <p class="admin-note">Click "edit" on a skill to change it, or "x" to delete it.</p>
+
+    <div class="skills-grid" id="skill-list"></div>
+
+    <form class="crud-form" id="skill-form">
+      <h3 id="skill-form-title">Add a skill</h3>
+      <input type="hidden" id="skill-id">
+      <select id="skill-category">
+        <option>Languages</option>
+        <option>Front-end</option>
+        <option>Back-end</option>
+        <option>Mobile</option>
+        <option>Networking</option>
+        <option>Tools</option>
+      </select>
+      <input type="text" id="skill-name" maxlength="50" placeholder="Skill name">
+      <button class="button" type="submit" id="skill-save">Add skill</button>
+      <button class="button button-outline" type="button" id="skill-clear">Clear</button>
+    </form>
+  </section>
+
+  <section class="section" id="certifications">
+    <h2>Certifications</h2>
+    <p class="admin-note">Add, edit or delete certifications.</p>
+
+    <ul class="cert-list" id="cert-list"></ul>
+
+    <form class="crud-form" id="cert-form">
+      <h3 id="cert-form-title">Add a certification</h3>
+      <input type="hidden" id="cert-id">
+      <input type="text" id="cert-name" maxlength="200" placeholder="Certification name">
+      <button class="button" type="submit" id="cert-save">Add certification</button>
+      <button class="button button-outline" type="button" id="cert-clear">Clear</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>Admin page</p>
+  </footer>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>
